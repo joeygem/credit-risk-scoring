@@ -1,0 +1,68 @@
+{
+  "dataset": {
+    "rows": 30000,
+    "default_rate": 0.2212,
+    "train_rows": 21000,
+    "test_rows": 9000
+  },
+  "scorecard": {
+    "auc": 0.7576,
+    "gini": 0.5153,
+    "ks": 0.3973,
+    "brier": 0.1396,
+    "features": [
+      "months_late_latest",
+      "n_months_delinquent_6m",
+      "n_zero_payments_6m",
+      "payment_ratio_latest",
+      "limit_bal",
+      "payment_ratio_avg_5m",
+      "utilisation_avg_6m",
+      "balance_trend_6m",
+      "avg_payment_to_limit"
+    ],
+    "scale": {
+      "base_score": 600,
+      "base_odds": 50,
+      "pdo": 20
+    }
+  },
+  "xgboost": {
+    "auc": 0.7772,
+    "gini": 0.5543,
+    "ks": 0.4265,
+    "brier": 0.1353,
+    "trees": 584,
+    "top_shap_drivers": {
+      "max_months_late_6m": 0.3629,
+      "months_late_latest": 0.2855,
+      "limit_bal": 0.2285,
+      "n_zero_payments_6m": 0.122,
+      "n_months_delinquent_3m": 0.1083
+    }
+  },
+  "information_value": {
+    "months_late_latest": 0.8782,
+    "n_months_delinquent_6m": 0.8691,
+    "n_months_delinquent_3m": 0.8417,
+    "max_months_late_6m": 0.7792,
+    "n_zero_payments_6m": 0.2634,
+    "payment_ratio_latest": 0.2229,
+    "limit_bal": 0.1958,
+    "payment_ratio_avg_5m": 0.142,
+    "utilisation_avg_6m": 0.0937,
+    "balance_trend_6m": 0.0763,
+    "utilisation_max_6m": 0.0592,
+    "utilisation_latest": 0.0545,
+    "avg_payment_to_limit": 0.0235
+  },
+  "business": {
+    "portfolio_default_rate": 0.2212,
+    "approval_rate": 0.8,
+    "cutoff_score": 505,
+    "default_rate_approved": 0.1396,
+    "relative_reduction": 0.369,
+    "top_decile_default_rate": 0.0747,
+    "bottom_decile_default_rate": 0.6744
+  }
+}
